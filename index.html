@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Калькулятор</title>
+        <link rel="stylesheet" href="./receive.css">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+        <script>
+            mocha.setup('bdd');
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+        <script>
+            let assert = chai.assert;
+        </script>
+    </head>
+    <body>
+        <div class="calculator">
+            <div class="display">0</div>
+            <div class="buttons">
+                <button class="button btn-grey">AC</button>
+                <button class="button btn-grey">+/-</button>
+                <button class="button btn-grey">%</button>
+    
+                <button class="button btn-orange">/</button>
+    
+                <button class="button">7</button>
+                <button class="button">8</button>
+                <button class="button">9</button>
+    
+                <button class="button btn-orange">*</button>
+    
+                <button class="button">4</button>
+                <button class="button">5</button>
+                <button class="button">6</button>
+    
+                <button class="button btn-orange">-</button>
+    
+                <button class="button">1</button>
+                <button class="button">2</button>
+                <button class="button">3</button>
+    
+                <button class="button btn-orange">+</button>
+    
+                <button class="button zero-btn">0</button>
+                <button class="button">.</button>
+                <button class="button btn-orange">=</button>
+    
+    
+            </div>
+        </div>
+        <script src="test.js"></script>
+        <div id="mocha"></div>
+        <script>
+            mocha.run();
+        </script>
+    </body>
+</html>
