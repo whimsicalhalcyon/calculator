@@ -125,14 +125,18 @@ function getPersent() {
     display.innerText = eval(persent)
 }
 
+// тестирование
 
-
-describe("summ", function() {
-    it("2 + 2 будет 4", function() {
-        assert.equal(add(2, 2),4);
-    });
+describe("Тестирование математических выражений", function() {
+    it("Функция возвращает 4 при сложении 2 и 2", function() {
+        assert.equal(add(2, 2), 4);
+    }); //сложение двух чисел
     
-    it("multi", function() {
-        assert.equal(multiply(2, 2), 5);
-    });
+    it("функция возвращает произведение 2 и 3, которое равно 6", function() {
+        assert.equal(multiply(2, 3), 5, 'при умножении 2* 2 будет 6, а не 5');
+    }); //правильность работы функции умножения
+
+    it('функция возвращает результат деления 25 на 5, которое больше 100', function() {
+        assert.isAbove(divide(25, 5), 100, 'число меньше 100')
+    })
 });
