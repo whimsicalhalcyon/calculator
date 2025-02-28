@@ -19,8 +19,16 @@
     background-color: #034c58;
     border-radius: 15px;
     padding: 5px;
-    margin: 6px;
+    /* margin: 6px; */
+    overflow: hidden;
+    white-space: nowrap; 
+    width:  440px;
+    height: 100px;
 
+}
+
+.display.long-text {
+    font-size: 2em;
 }
 
 .buttons {

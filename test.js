@@ -4,7 +4,7 @@ let display = document.querySelector('.display');
 
 let buttons = Array.from(document.querySelectorAll('.button'));
 
-buttons.map((button) => {
+buttons.forEach((button) => {
     button.addEventListener('click', (event) => {
         let operation = event.target.innerText;
 
@@ -37,6 +37,8 @@ buttons.map((button) => {
                     display.innerText += operation;
                 }
         }
+        updateDisplaySize()
+        
     });
 });
 
@@ -125,6 +127,13 @@ function getPersent() {
     display.innerText = eval(persent)
 }
 
+function updateDisplaySize() {
+    if (display.innerText.length > 10) { // Например, если длина числа больше 10 символов
+        display.classList.add('long-text');
+    } else {
+        display.classList.remove('long-text');
+    }
+}
 // тестирование
 
 describe("Тестирование математических выражений", function() {
