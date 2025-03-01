@@ -27,6 +27,11 @@
 
 }
 
+
+.button:hover {
+    color: red;
+}
+
 .display.long-text {
     font-size: 2em;
 }
