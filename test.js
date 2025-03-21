@@ -88,11 +88,13 @@ function calculateResult() {
                 result = 'ошибка';
         }
 
+       
         if (result.toString().length > 10) {
-            display.innerText = result.toExponential(4);  
-        } else {
-            display.innerText = result;
+            result = result.toExponential(7);  
+            result = Number(result).toFixed(7);
         }
+
+        display.innerText = result;
     } catch (error) {
         display.innerText = 'ошибка';
     }
