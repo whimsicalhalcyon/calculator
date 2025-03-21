@@ -33,11 +33,10 @@ buttons.forEach((button) => {
             default:
                 if (display.innerText === '0' && operation !== '.') {
                     display.innerText = operation;
-                } else {
+                } else if (display.innerText.length < 10) {
                     display.innerText += operation;
                 }
         }
-        updateDisplaySize()
         
     });
 });
@@ -70,25 +69,43 @@ function calculateResult() {
     const num1 = +(operands[0]);
     const num2 = +(operands[1]);
 
-    let result;
-    switch (operator) {
-        case '+':
-            result = add(num1, num2);
-            break;
-        case '-':
-            result = subtract(num1, num2);
-            break;
-        case '*':
-            result = multiply(num1, num2);
-            break;
-        case '/':
-            result = divide(num1, num2);
-            break;
-        default:
-            result = 'Error';
-    }
+    try {
+        let result;
+        switch (operator) {
+            case '+':
+                result = add(num1, num2);
+                break;
+            case '-':
+                result = subtract(num1, num2);
+                break;
+            case '*':
+                result = multiply(num1, num2);
+                break;
+            case '/':
+                result = divide(num1, num2);
+                break;
+            default:
+                result = 'ошибка';
+        }
 
-    display.innerText = result;
+        if (result.toString().length > 10) {
+            display.innerText = result.toExponential(4);  
+        } else {
+            display.innerText = result;
+        }
+    } catch (error) {
+        display.innerText = 'ошибка';
+    }
+}
+
+function handleOperation(operation) {
+    const lastChar = display.innerText.slice(-1);
+    if (['+', '-', '*', '/'].includes(lastChar)) {
+        return;
+    }
+    if (display.innerText.length < 10) {
+        display.innerText += operation;
+    }
 }
 
 function handleOperation(operation) {
@@ -123,17 +140,21 @@ function divide(a, b) {
 }
 
 function getPersent() {
-    let persent = display.innerText + '/100'
-    display.innerText = eval(persent)
-}
-
-function updateDisplaySize() {
-    if (display.innerText.length > 10) { // Например, если длина числа больше 10 символов
-        display.classList.add('long-text');
-    } else {
-        display.classList.remove('long-text');
+    try {
+        let persent = display.innerText + '/100';
+        let result = eval(persent);
+        
+        if (result.toString().length > 10) {
+            display.innerText = result.toExponential(7); 
+        } else {
+            display.innerText = result;
+        }
+    } catch (error) {
+        display.innerText = 'ошибка';
     }
 }
+
+
 // тестирование
 
 describe("Тестирование математических выражений", function() {
