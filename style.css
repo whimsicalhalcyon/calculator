@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Onest:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Unbounded:wght@200..900&display=swap');
 
 .calculator {
-    width: 470px;
-    height: 680px;
+    width: 44vh;
+    /* height: 68vh; */
     background-color:#026E81;
-    margin: 150px auto;
-    border-radius: 20px;
-    padding: 10px;
+    margin: 15vh auto;
+    border-radius: 2vh;
+    padding: 1vh;
     font-family: 'Roboto';
 }
 
@@ -18,37 +18,48 @@
     /* padding: 40px 40px 40px 0; */
     background-color: #034c58;
     border-radius: 15px;
-    padding: 5px;
+    padding: 0.5vh;
     /* margin: 6px; */
     overflow: hidden;
     white-space: nowrap; 
-    width:  440px;
-    height: 100px;
+
+    height: 10vh;
 
 }
 
 .display.long-text {
-    font-size: 2em;
+    font-size: 1.5rem;
 }
 
 .buttons {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .button {
     border: none;
     color: white;
     border-radius: 10px;
-    padding: 28px 30px;
-    width: 22%;
+    padding: 28px 3vh;
+    width: 21%;
+    margin: 6px;
+    font-size: 30px;
+    background-color:#00ABBD;
+}
+.button-dot {
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 28px 3vh;
+    width: 23%;
     margin: 6px;
     font-size: 30px;
     background-color:#00ABBD;
 }
 
 .zero-btn {
-    padding: 30px 190px 26px 20px;
+    padding: 30px 17vh 26px 20px;
 }
 
 .btn-orange {
@@ -63,4 +74,23 @@
 .container {
     width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vh;
+    height: 7vh;
+    background-color: #00ABBD;
+    border-radius: 10px;
+}
+
+.btn a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto';
 }
