@@ -59,3 +59,8 @@
 .btn-grey {
     background-color: #A1C7E0;
 }
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
